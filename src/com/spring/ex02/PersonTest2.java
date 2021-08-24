@@ -6,9 +6,13 @@ import org.springframework.core.io.FileSystemResource;
 
 public class PersonTest2 {
 	public static void main(String[] args) {
+		
 		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("person.xml"));
+		
 		PersonService person1 = (PersonService) factory.getBean("personService1");
+		
 		person1.sayHello();
+		
 		System.out.println();
 
 		PersonService person2 = (PersonService) factory.getBean("personService2");
